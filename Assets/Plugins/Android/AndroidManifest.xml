@@ -12,4 +12,20 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
         </activity>
     </application>
+
+	<queries>
+		<package android:name="com.bhaptics.player" />
+	</queries>
+
+	<uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+	
+	
+	
+	
+	
+	
+	
+	
 </manifest>
