@@ -1,5 +1,4 @@
 ﻿using System;
-using Bhaptics.SDK2;
 using UnityEngine;
 
 /// <summary>
@@ -189,7 +188,7 @@ public class VolleyballController : MonoBehaviour
             return;
         }
 
-        BhapticsLibrary.Play(eventId);
+        BhapticsBridge.TryPlayEvent(eventId);
     }
 
     private TrackerProxy ResolveHandProxy(PlayerInputManager.HandType handType)

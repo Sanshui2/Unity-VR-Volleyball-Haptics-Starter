@@ -3,10 +3,16 @@
 Minimal Pico VR volleyball starter focused on one interaction loop:
 
 - enter scene
-- hand tracking drives the hand hit proxies
+- Pico hand tracking drives the hand hit proxies
 - volleyballs spawn continuously
 - hitting the ball works with general hand contact, with extra tuning for common volleyball motions
 - optional bHaptics events can be triggered on contact
+
+## Setup
+
+- Open the project in Unity `2022.3.51f1c1`.
+- `Packages/manifest.json` now points `com.unity.xr.picoxr` at the official Pico Unity Integration SDK Git repository instead of a machine-local path.
+- The starter branch does not require the bHaptics Unity SDK to compile. Import the official bHaptics package only if you want playback.
 
 ## Scene Behavior
 
@@ -14,6 +20,7 @@ Minimal Pico VR volleyball starter focused on one interaction loop:
 
 - `VolleyballSpawner` starts automatically on scene load.
 - `VolleyballController` uses active hand hit proxies in the scene.
+- Motion-tracker calibration is intentionally not part of `main`; the starter stays focused on hand volleyball.
 - bHaptics is optional. Leave the event IDs empty to disable playback.
 
 ## Key Scripts
@@ -22,6 +29,7 @@ Minimal Pico VR volleyball starter focused on one interaction loop:
 - `Assets/scripts/VolleyballController.cs`
 - `Assets/scripts/TrackerProxy.cs`
 - `Assets/scripts/MyHandTrackOBJ.cs`
+- `Assets/scripts/BhapticsBridge.cs`
 
 ## bHaptics Setup
 
@@ -32,8 +40,9 @@ On the volleyball prefab / scene instance:
 - set `Right Hand Event Id`
 
 If the fields are blank, the starter runs without bHaptics playback.
+If the bHaptics SDK is not installed, the starter still compiles and simply skips playback.
 
 ## Pico Dependency
 
-This project currently references Pico XR as a local package path in `Packages/manifest.json`.
-Before opening on another machine, replace that path with your local Pico XR SDK location.
+This project now references Pico XR through the official public Git package URL in `Packages/manifest.json`.
+If you need a different Pico SDK revision, change that Git dependency to the version you want to pin.
