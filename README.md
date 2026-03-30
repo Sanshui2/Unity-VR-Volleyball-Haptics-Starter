@@ -5,7 +5,7 @@ Minimal Pico VR volleyball starter focused on one interaction loop:
 - enter scene
 - hand tracking drives the hand hit proxies
 - volleyballs spawn continuously
-- hitting the ball applies volleyball-specific motion rules
+- hitting the ball works with general hand contact, with extra tuning for common volleyball motions
 - optional bHaptics events can be triggered on contact
 
 ## Scene Behavior
