@@ -14,6 +14,11 @@ Minimal Pico VR volleyball starter focused on one interaction loop:
 - `Packages/manifest.json` now points `com.unity.xr.picoxr` at the official Pico Unity Integration SDK Git repository instead of a machine-local path.
 - The starter branch does not require the bHaptics Unity SDK to compile. Import the official bHaptics package only if you want playback.
 
+## Branches
+
+- `main`: clean starter branch with optional bHaptics hook points
+- `with-bhaptics-sdk`: pre-integrated branch for people who want the official SDK already in place
+
 ## Scene Behavior
 
 `Assets/Scenes/SampleScene.unity` is the demo scene.
@@ -41,6 +46,8 @@ On the volleyball prefab / scene instance:
 
 If the fields are blank, the starter runs without bHaptics playback.
 If the bHaptics SDK is not installed, the starter still compiles and simply skips playback.
+
+For the full manual integration flow on `main`, see `Docs/bhaptics-setup.md`.
 
 ## Pico Dependency
 
